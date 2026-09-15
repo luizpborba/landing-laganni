@@ -1,0 +1,534 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Laganni Arquitetura | Projeto de interiores para reformar sua casa</title>
+<meta name="description" content="Projetos de interiores para casas que já existem, em Florianópolis e on-line. Você aprova tudo em 3D antes da obra. Mais de 300 projetos por Ester e Lauren. Peça seu orçamento pelo WhatsApp.">
+<meta property="og:title" content="Laganni Arquitetura | Projeto de interiores para reformar sua casa">
+<meta property="og:description" content="A gente olha o que você já tem, mantém o que funciona e redesenha o resto do jeito que a sua família vive.">
+<meta property="og:image" content="assets/sala-lareira.webp">
+<link rel="icon" href="https://www.laganni.com.br/wp-content/uploads/2024/07/cropped-favicon-32x32.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Marcellus&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="assets/sala-lareira.webp">
+<style>
+:root{
+  --creme:#F1EEE9;
+  --claro:#FAF8F5;
+  --texto:#332D29;
+  --ardosia:#3B445D;
+  --ardosia-clara:#C2D1D9;
+  --texto-2:#6A625C;
+  --terracota:#CD6959;
+  --terracota-forte:#B4523F;
+  --terracota-escura:#9E4636;
+  --nude:#DDA782;
+  --nude-escuro:#A2704A;
+  --linha:#E0D6CE;
+  --display:"Marcellus", Georgia, serif;
+  --sans:"Hanken Grotesk", system-ui, sans-serif;
+  --arco:50% 50% 0 0 / 18% 18% 0 0;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--creme);color:var(--texto);font:400 1.0625rem/1.65 var(--sans);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+h1,h2,h3{font-family:var(--display);font-weight:400;margin:0;line-height:1.08}
+p{margin:0}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+:focus-visible{outline:2px solid var(--terracota-forte);outline-offset:3px}
+section{padding:112px 0;scroll-margin-top:60px}
+@media (max-width:760px){section{padding:78px 0}}
+.titulo{font-size:clamp(2.2rem,4.4vw,3.6rem);max-width:19ch}
+.intro{margin-top:18px;font-size:1.12rem;color:var(--texto-2);max-width:56ch}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.6em;padding:1.05em 1.7em;border-radius:999px;font:600 1rem/1 var(--sans);text-decoration:none;border:1px solid transparent;cursor:pointer;transition:background-color .2s,color .2s}
+.btn svg{width:1.2em;height:1.2em;flex:none}
+.btn-terracota{background:var(--terracota-forte);color:#fff}
+.btn-terracota:hover{background:var(--terracota-escura)}
+.btn-contorno{border-color:var(--texto);color:var(--texto);background:transparent}
+.btn-contorno:hover{background:var(--texto);color:var(--claro)}
+.cta-secao{margin-top:44px;display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.cta-secao p{color:var(--texto-2)}
+.escuro .cta-secao p{color:var(--ardosia-clara)}
+
+/* topo */
+.topo{position:sticky;top:0;z-index:20;background:rgba(241,238,233,.92);backdrop-filter:blur(10px)}
+.topo .wrap{display:flex;align-items:center;justify-content:space-between;height:76px}
+.topo img{width:148px}
+.topo nav{display:flex;align-items:center;gap:28px;font-size:.95rem}
+.topo nav a:not(.btn){text-decoration:none}
+.topo nav a:not(.btn):hover{text-decoration:underline;text-underline-offset:5px}
+.topo .btn{padding:.8em 1.3em;font-size:.92rem}
+@media (max-width:860px){.topo nav a:not(.btn){display:none}.topo img{width:122px}.topo .btn{padding:.75em 1.1em}}
+
+/* hero */
+.hero{padding:48px 0 0}
+.hero-texto{display:grid;grid-template-columns:1.3fr 1fr;gap:56px;align-items:end;margin-bottom:52px}
+.hero h1{font-size:clamp(2.7rem,5.8vw,5rem);letter-spacing:-.01em;max-width:14ch}
+.hero-lado p{font-size:1.15rem;color:var(--texto-2);max-width:42ch}
+.hero-lado .acoes{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.arco{border-radius:var(--arco);overflow:hidden}
+.hero figure{margin:0}
+.hero figure img{width:100%;aspect-ratio:1616/900;object-fit:cover;object-position:center 58%}
+.hero figcaption{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;padding-top:16px;font-size:.92rem;color:var(--texto-2)}
+.selo{display:flex;gap:36px;flex-wrap:wrap}
+.selo b{font:400 1.45rem/1 var(--display);color:var(--texto);margin-right:8px}
+@media (max-width:900px){
+  .hero-texto{grid-template-columns:1fr;gap:24px;margin-bottom:36px}
+  .hero figure img{aspect-ratio:4/3.4}
+  :root{--arco:50% 50% 0 0 / 14% 14% 0 0}
+}
+
+/* dores */
+.dores{background:var(--claro)}
+.dores .grade{display:grid;grid-template-columns:5fr 7fr;gap:64px;align-items:start}
+.dores ul{list-style:none;margin:0;padding:0;border-top:1px solid var(--linha)}
+.dores li{padding:22px 0 22px 40px;border-bottom:1px solid var(--linha);position:relative;font-size:1.08rem}
+.dores li::before{content:"";position:absolute;left:0;top:1.5em;width:20px;height:11px;border:1.5px solid var(--terracota);border-bottom:0;border-radius:20px 20px 0 0}
+.dores .fecho{margin-top:26px;font-size:1.08rem;color:var(--texto-2)}
+@media (max-width:900px){.dores .grade{grid-template-columns:1fr;gap:32px}}
+
+/* entregas */
+.entregas .grade{display:grid;grid-template-columns:4fr 8fr;gap:64px}
+.entregas ol{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:0 48px}
+.entregas li{padding:26px 0;border-top:1px solid var(--linha)}
+.entregas h3{font:600 1.08rem/1.3 var(--sans);margin-bottom:6px}
+.entregas p{color:var(--texto-2);font-size:.98rem}
+@media (max-width:900px){.entregas .grade{grid-template-columns:1fr;gap:32px}.entregas ol{grid-template-columns:1fr;gap:0}}
+
+/* galeria */
+.galeria{display:grid;grid-template-columns:repeat(12,1fr);gap:16px;margin-top:56px}
+.galeria figure{margin:0}
+.galeria .quadro{overflow:hidden;background:var(--linha)}
+.galeria img{width:100%;height:100%;object-fit:cover}
+.galeria figcaption{margin-top:10px;font-size:.92rem;color:var(--texto-2)}
+.a1{grid-column:span 7}.a1 .quadro{aspect-ratio:16/10}
+.a2{grid-column:span 5}.a2 .quadro{aspect-ratio:16/10}
+.a3{grid-column:span 4}.a3 .quadro{aspect-ratio:1/1}
+.a4{grid-column:span 4}.a4 .quadro{aspect-ratio:1/1}
+.a5{grid-column:span 4}.a5 .quadro{aspect-ratio:1/1}
+.a6{grid-column:span 5}.a6 .quadro{aspect-ratio:4/3}
+.a7{grid-column:span 7}.a7 .quadro{aspect-ratio:16/10}
+.a8{grid-column:span 4}.a8 .quadro{aspect-ratio:3/4}
+.a9{grid-column:span 4}.a9 .quadro{aspect-ratio:3/4}
+.a10{grid-column:span 4}.a10 .quadro{aspect-ratio:3/4}
+@media (max-width:760px){
+  .galeria{grid-template-columns:1fr 1fr;gap:24px 12px}
+  .galeria figure{grid-column:span 1}
+  .galeria .a1,.galeria .a7{grid-column:1/-1}
+  .galeria .a1 .quadro,.galeria .a7 .quadro{aspect-ratio:16/10}
+  .galeria .a2 .quadro,.galeria .a3 .quadro,.galeria .a4 .quadro,.galeria .a5 .quadro,.galeria .a6 .quadro,.galeria .a8 .quadro,.galeria .a9 .quadro,.galeria .a10 .quadro{aspect-ratio:1/1}
+  .galeria figcaption{min-height:2.4em}
+}
+
+/* faixa */
+.faixa{background:var(--terracota);color:#fff}
+.faixa .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:28px;padding-top:56px;padding-bottom:56px}
+.faixa p{font:400 clamp(1.5rem,2.8vw,2.2rem)/1.15 var(--display);max-width:22ch}
+.faixa .btn{background:#fff;color:var(--terracota-escura)}
+.faixa .btn:hover{background:var(--creme)}
+
+/* antes e depois */
+.escuro{background:var(--ardosia);color:var(--claro)}
+.escuro .intro{color:var(--ardosia-clara)}
+.pares{margin-top:56px;display:grid;gap:72px}
+.par{display:grid;grid-template-columns:8fr 4fr;gap:44px;align-items:center}
+.fotos{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.fotos figure{margin:0;position:relative}
+.fotos img{width:100%;aspect-ratio:1/.86;object-fit:cover;background:#323A4E}
+.fotos figcaption{position:absolute;left:0;bottom:0;background:var(--claro);color:var(--texto);font:600 .82rem/1 var(--sans);padding:9px 14px}
+.par h3{font-size:2rem}
+.par p{margin-top:12px;color:var(--ardosia-clara)}
+@media (max-width:900px){
+  .par{grid-template-columns:1fr;gap:20px}
+  .pares{gap:56px}
+}
+
+/* etapas */
+.etapas{background:var(--claro)}
+.etapas .grade{display:grid;grid-template-columns:4fr 7fr;gap:64px}
+.etapas ol{list-style:none;margin:0;padding:0;counter-reset:passo}
+.etapas li{counter-increment:passo;display:grid;grid-template-columns:4.5rem 1fr;gap:20px;padding:28px 0;border-top:1px solid var(--linha)}
+.etapas li:last-child{border-bottom:1px solid var(--linha)}
+.etapas li::before{content:counter(passo);font:400 2.5rem/1 var(--display);color:var(--terracota)}
+.etapas h3{font:600 1.12rem/1.3 var(--sans);margin-bottom:6px}
+.etapas li p{color:var(--texto-2)}
+@media (max-width:900px){.etapas .grade{grid-template-columns:1fr;gap:32px}}
+
+/* quem somos */
+.quem .grade{display:grid;grid-template-columns:5fr 6fr;gap:64px;align-items:center}
+.quem img{width:100%;aspect-ratio:760/375;object-fit:cover}
+.quem h2{font-size:clamp(2rem,3.8vw,3.1rem)}
+.quem .texto>p{margin-top:18px;color:var(--texto-2);font-size:1.08rem;max-width:50ch}
+.valores{list-style:none;margin:26px 0 0;padding:0}
+.valores li{padding:12px 0 12px 28px;position:relative;border-top:1px solid var(--linha)}
+.valores li::before{content:"";position:absolute;left:0;top:1.15em;width:14px;height:8px;border:1.5px solid var(--nude-escuro);border-bottom:0;border-radius:14px 14px 0 0}
+.quem .insta{display:inline-block;margin-top:24px;font-weight:600;color:var(--terracota-forte);text-underline-offset:5px}
+@media (max-width:900px){.quem .grade{grid-template-columns:1fr;gap:32px}}
+
+/* faq */
+.faq .grade{display:grid;grid-template-columns:4fr 7fr;gap:64px}
+.faq details{border-top:1px solid var(--linha)}
+.faq details:last-of-type{border-bottom:1px solid var(--linha)}
+.faq summary{cursor:pointer;list-style:none;padding:22px 44px 22px 0;font-weight:500;font-size:1.1rem;position:relative}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:4px;top:50%;transform:translateY(-50%);font:400 1.8rem/1 var(--display);color:var(--terracota);transition:transform .25s}
+.faq details[open] summary::after{transform:translateY(-50%) rotate(45deg)}
+.faq details p{padding:0 44px 24px 0;color:var(--texto-2);max-width:62ch}
+@media (max-width:900px){.faq .grade{grid-template-columns:1fr;gap:24px}}
+
+/* contato */
+.contato{padding-bottom:0}
+.contato .grade{display:grid;grid-template-columns:1fr 1fr;gap:64px}
+.contato h2{font-size:clamp(2.2rem,4.4vw,3.6rem);max-width:13ch}
+.contato .dados{margin-top:32px;display:grid;gap:8px;color:var(--ardosia-clara)}
+.contato .dados a{text-underline-offset:5px;text-decoration-color:#6E7896}
+form{display:grid;gap:20px;align-content:start}
+.campo{display:grid;gap:8px;font-size:.95rem;font-weight:500;color:#DCE3E9}
+input[type=text]{font:inherit;color:var(--texto);background:var(--claro);border:1px solid transparent;border-radius:10px;padding:.85em 1em;width:100%}
+input[type=text]:focus{outline:2px solid var(--nude);outline-offset:1px}
+fieldset{border:0;margin:0;padding:0}
+legend{font-size:.95rem;font-weight:500;color:#DCE3E9;margin-bottom:10px;padding:0}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips label{position:relative}
+.chips input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
+.chips span{display:inline-block;padding:.65em 1.1em;border:1px solid #5B6580;border-radius:999px;color:#E7ECF0;font-size:.95rem}
+.chips input:checked+span{background:var(--claro);border-color:var(--claro);color:var(--texto)}
+.chips input:focus-visible+span{outline:2px solid var(--nude);outline-offset:2px}
+.erro{min-height:1.3em;font-size:.92rem;color:#F3BBAE}
+.nota{font-size:.88rem;color:#94A0B2}
+.contato figure{margin:88px 0 0}
+.contato figure img{width:100%;aspect-ratio:1600/520;object-fit:cover;object-position:center 60%}
+@media (max-width:900px){.contato .grade{grid-template-columns:1fr;gap:40px}.contato figure{margin-top:64px}.contato figure img{aspect-ratio:16/9}}
+
+.rodape{background:var(--ardosia);color:#A9B3C2;padding:34px 0 108px;font-size:.92rem}
+.rodape .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
+.rodape nav{display:flex;gap:22px}
+
+.zap{position:fixed;right:20px;bottom:20px;z-index:30;width:58px;height:58px;border-radius:50%;background:#1E9E57;color:#fff;display:grid;place-items:center;box-shadow:0 10px 28px rgba(20,25,35,.28)}
+.zap:hover{background:#178649}
+.zap svg{width:28px;height:28px}
+
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-zap" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></symbol>
+</svg>
+
+<header class="topo">
+  <div class="wrap">
+    <a href="#inicio" aria-label="Laganni Arquitetura, voltar ao início"><img src="assets/logo.svg" alt="Laganni Arquitetura" width="173" height="47"></a>
+    <nav aria-label="Principal">
+      <a href="#projetos">Projetos</a>
+      <a href="#antes-e-depois">Antes e depois</a>
+      <a href="#como-funciona">Como funciona</a>
+      <a class="btn btn-terracota" href="#orcamento">Pedir orçamento</a>
+    </nav>
+  </div>
+</header>
+
+<main id="inicio">
+
+  <section class="hero" aria-labelledby="t-hero">
+    <div class="wrap">
+      <div class="hero-texto">
+        <h1 id="t-hero">Transformar a sua casa não é quebrar tudo.</h1>
+        <div class="hero-lado">
+          <p>A gente olha o que você já tem, mantém o que funciona e redesenha o resto do jeito que a sua família vive hoje. Você aprova cada ambiente em 3D antes de a obra começar.</p>
+          <div class="acoes">
+            <a class="btn btn-terracota" target="_blank" rel="noopener" href="https://wa.me/5548996556442?text=Ol%C3%A1%2C%20Laganni!%20Vim%20pelo%20site%20e%20quero%20um%20projeto%20para%20reformar%20a%20minha%20casa."><svg aria-hidden="true"><use href="#i-zap"/></svg>Quero reformar minha casa</a>
+            <a class="btn btn-contorno" href="#projetos">Ver projetos</a>
+          </div>
+        </div>
+      </div>
+      <figure>
+        <img class="arco" src="assets/sala-lareira.webp" alt="Sala de estar com lareira, painel de mármore, nichos iluminados e lustre de braços" width="1616" height="1361" fetchpriority="high">
+        <figcaption>
+          <span>Sala de estar projetada pela Laganni</span>
+          <span class="selo"><span><b>+300</b>projetos elaborados</span><span><b>SC</b>presencial e on-line</span></span>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id="quem-somos" class="quem" aria-labelledby="t-quem">
+    <div class="wrap grade">
+      <img class="arco" src="assets/ester-e-lauren.webp" alt="Ester e Lauren, arquitetas da Laganni, sorrindo em uma cozinha com armários de vidro" width="760" height="375" loading="lazy">
+      <div class="texto">
+        <h2 id="t-quem">Ester e Lauren, as arquitetas que vão desenhar a sua casa</h2>
+        <p>Ester e Lauren tocam o Laganni desde o primeiro papo até a última prancha. Abrir a rotina e os sonhos da família para alguém não é pouca coisa, então quem conversa com você é quem projeta.</p>
+        <ul class="valores">
+          <li>Ouvir e perceber de verdade cada cliente</li>
+          <li>Projetar espaços que reflitam quem vai viver ali</li>
+          <li>Comunicação transparente e gentil do começo ao fim</li>
+        </ul>
+        <div class="cta-secao">
+          <a class="btn btn-terracota" target="_blank" rel="noopener" href="https://wa.me/5548996556442?text=Ol%C3%A1%2C%20Ester%20e%20Lauren!%20Vim%20pelo%20site%20e%20quero%20conversar%20sobre%20um%20projeto."><svg aria-hidden="true"><use href="#i-zap"/></svg>Falar com a Ester e a Lauren</a>
+        </div>
+        <a class="insta" href="https://www.instagram.com/laganniarquitetura/" target="_blank" rel="noopener">Acompanhe os bastidores no @laganniarquitetura</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="dores" aria-labelledby="t-dores">
+    <div class="wrap grade">
+      <div>
+        <h2 id="t-dores" class="titulo">Você se reconhece em alguma dessas?</h2>
+        <p class="intro">São as frases que mais ouvimos de quem já mora na casa e sente que ela poderia render muito mais.</p>
+        <div class="cta-secao">
+          <a class="btn btn-terracota" target="_blank" rel="noopener" href="https://wa.me/5548996556442?text=Ol%C3%A1%2C%20Laganni!%20Minha%20casa%20precisa%20de%20mudan%C3%A7as%20e%20eu%20n%C3%A3o%20sei%20por%20onde%20come%C3%A7ar."><svg aria-hidden="true"><use href="#i-zap"/></svg>Contar meu caso</a>
+        </div>
+      </div>
+      <div>
+        <ul>
+          <li>A casa é boa, mas a planta não combina com a rotina de hoje.</li>
+          <li>Você pensou “já que vamos mexer no banheiro…” e travou no resto.</li>
+          <li>Tem medo de começar uma obra e ela não ter fim.</li>
+          <li>A casa é bonita, mas não tem a cara de quem mora nela.</li>
+          <li>Você não sabe o que dá para aproveitar e o que precisa mudar.</li>
+          <li>Cada profissional fala uma coisa e ninguém coordena o conjunto.</li>
+        </ul>
+        <p class="fecho">Se duas ou mais são a sua casa, é exatamente disso que a gente cuida todo dia.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="entregas" aria-labelledby="t-entregas">
+    <div class="wrap grade">
+      <div>
+        <h2 id="t-entregas" class="titulo">O que você recebe</h2>
+        <p class="intro">Um projeto é o contrário do improviso: tudo decidido no papel, com quem executa sabendo exatamente o que fazer.</p>
+      </div>
+      <ol>
+        <li><h3>Estudo do layout</h3><p>A casa reorganizada no papel, para você ver a circulação antes de mover um móvel.</p></li>
+        <li><h3>Imagens 3D realistas</h3><p>Cores, revestimentos e móveis aprovados olhando, não imaginando.</p></li>
+        <li><h3>Plantas para a obra</h3><p>Elétrica, iluminação, forro e revestimentos marcados para quem executa seguir.</p></li>
+        <li><h3>Marcenaria detalhada</h3><p>Cada móvel sob medida com medidas e acabamentos, para o marceneiro orçar sem achismo.</p></li>
+        <li><h3>Lista de acabamentos</h3><p>O que comprar, onde usar e quanto precisa, para o orçamento não fugir do controle.</p></li>
+        <li><h3>Suporte durante a obra</h3><p>As dúvidas de quem está executando respondidas por quem desenhou o projeto.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="projetos" aria-labelledby="t-proj">
+    <div class="wrap">
+      <h2 id="t-proj" class="titulo">Ambientes que já saíram do papel</h2>
+      <p class="intro">Casas de famílias diferentes, com gostos diferentes. O que se repete é o cuidado com cada canto.</p>
+      <div class="galeria">
+        <figure class="a1"><div class="quadro"><img src="assets/sala-integrada.webp" alt="Sala de estar clara integrada ao jantar, com arco de passagem e tapete" width="1400" height="1179" loading="lazy"></div><figcaption>Sala de estar</figcaption></figure>
+        <figure class="a2"><div class="quadro"><img src="assets/cozinha.webp" alt="Cozinha com ilha, armários claros e coifa revestida de madeira" width="1400" height="1178" loading="lazy"></div><figcaption>Cozinha com ilha</figcaption></figure>
+        <figure class="a3"><div class="quadro"><img src="assets/jantar.webp" alt="Sala de jantar com mesa de madeira maciça, lustre de cúpulas e adega embutida" width="1400" height="1179" loading="lazy"></div><figcaption>Sala de jantar</figcaption></figure>
+        <figure class="a4"><div class="quadro"><img src="assets/quarto.webp" alt="Quarto com cabeceira estofada, armários altos e iluminação em trilho" width="1400" height="1179" loading="lazy"></div><figcaption>Dormitório</figcaption></figure>
+        <figure class="a5"><div class="quadro"><img src="assets/banheiro-banheira.webp" alt="Banheiro com banheira, revestimento travertino e pendentes de vidro" width="1200" height="1011" loading="lazy"></div><figcaption>Banheiro com banheira</figcaption></figure>
+        <figure class="a6"><div class="quadro"><img src="assets/closet.webp" alt="Closet com ilha central, portas de vidro iluminadas e lustre" width="1400" height="1179" loading="lazy"></div><figcaption>Closet</figcaption></figure>
+        <figure class="a7"><div class="quadro"><img src="assets/piscina.webp" alt="Área externa com piscina, espreguiçadeiras e jardim de folhagens" width="1500" height="1263" loading="lazy"></div><figcaption>Área externa com piscina</figcaption></figure>
+        <figure class="a8"><div class="quadro"><img src="assets/casa-quintal.webp" alt="Varanda com pilares cobertos de primaveras abrindo para o gramado" width="1600" height="829" loading="lazy"></div><figcaption>Varanda e quintal</figcaption></figure>
+        <figure class="a9"><div class="quadro"><img src="assets/lavabo.webp" alt="Lavabo com papel de parede, cuba de coluna e espelho oval dourado" width="1000" height="842" loading="lazy"></div><figcaption>Lavabo</figcaption></figure>
+        <figure class="a10"><div class="quadro"><img src="assets/fachada-moderna.webp" alt="Fachada de casa moderna iluminada ao entardecer, com jardim e caminho de pedras" width="1600" height="1348" loading="lazy"></div><figcaption>Fachada</figcaption></figure>
+      </div>
+      <div class="cta-secao">
+        <a class="btn btn-terracota" target="_blank" rel="noopener" href="https://wa.me/5548996556442?text=Ol%C3%A1%2C%20Laganni!%20Vi%20os%20projetos%20no%20site%20e%20quero%20um%20or%C3%A7amento%20para%20a%20minha%20casa."><svg aria-hidden="true"><use href="#i-zap"/></svg>Quero um projeto assim</a>
+        <a class="btn btn-contorno" href="https://www.instagram.com/laganniarquitetura/" target="_blank" rel="noopener">Ver mais no Instagram</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="faixa" aria-label="Pedir orçamento">
+    <div class="wrap">
+      <p>Conte o que incomoda na sua casa. A gente diz por onde começar.</p>
+      <a class="btn" href="#orcamento">Pedir meu orçamento</a>
+    </div>
+  </section>
+
+  <section id="antes-e-depois" class="escuro" aria-labelledby="t-ad">
+    <div class="wrap">
+      <h2 id="t-ad" class="titulo">O antes que a gente encontra e o depois que a gente entrega</h2>
+      <p class="intro">As fotos do antes são dos imóveis como estavam. O depois é o projeto que os clientes aprovaram em 3D antes de contratar a obra.</p>
+
+      <div class="pares">
+        <article class="par">
+          <div class="fotos">
+            <figure>
+              <img src="assets/suite-antes.webp" alt="Quarto vazio com piso escuro, porta de vidro e paredes cinzas" width="1100" height="926" loading="lazy">
+              <figcaption>Antes</figcaption>
+            </figure>
+            <figure>
+              <img src="assets/suite-depois.webp" alt="Suíte com vigas de madeira, cortinas de linho, cômoda clara e poltrona" width="1600" height="1348" loading="lazy">
+              <figcaption>Depois</figcaption>
+            </figure>
+          </div>
+          <div>
+            <h3>Quarto vazio, suíte de verdade</h3>
+            <p>O mesmo espaço, com vigas aparentes, iluminação indireta e uma cômoda que organiza a parede inteira.</p>
+          </div>
+        </article>
+
+        <article class="par">
+          <div class="fotos">
+            <figure>
+              <img src="assets/banheiro-antes.webp" alt="Banheiro com revestimento cinza e bancada de mármore escuro" width="1000" height="842" loading="lazy">
+              <figcaption>Antes</figcaption>
+            </figure>
+            <figure>
+              <img src="assets/banheiro-depois.webp" alt="Banheiro claro com mármore branco, cuba dourada, nicho iluminado e box de vidro" width="1400" height="1179" loading="lazy">
+              <figcaption>Depois</figcaption>
+            </figure>
+          </div>
+          <div>
+            <h3>Banheiro que parece o dobro</h3>
+            <p>Sem mudar as paredes de lugar: revestimento claro, nicho com luz e metais que mudam o ambiente inteiro.</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="cta-secao">
+        <a class="btn btn-terracota" target="_blank" rel="noopener" href="https://wa.me/5548996556442?text=Ol%C3%A1%2C%20Laganni!%20Quero%20saber%20o%20que%20d%C3%A1%20para%20mudar%20na%20minha%20casa."><svg aria-hidden="true"><use href="#i-zap"/></svg>Quero ver a minha casa assim</a>
+        <p>Mande uma foto do ambiente que mais incomoda.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="como-funciona" class="etapas" aria-labelledby="t-etapas">
+    <div class="wrap grade">
+      <div>
+        <h2 id="t-etapas" class="titulo">Como funciona</h2>
+        <p class="intro">Do primeiro recado no WhatsApp até a obra, com você sabendo o que acontece em cada fase.</p>
+      </div>
+      <div>
+        <ol>
+          <li><div><h3>Você conta como a família vive</h3><p>A rotina, o que incomoda hoje e o que sempre quiseram ter. Pode ser pessoalmente ou por videochamada.</p></div></li>
+          <li><div><h3>A gente mede e entende a casa</h3><p>Levantamento do imóvel, das necessidades e do quanto você pretende investir na obra.</p></div></li>
+          <li><div><h3>Você aprova tudo em 3D</h3><p>Os ambientes aparecem prontos na tela e são ajustados até ficarem do seu jeito.</p></div></li>
+          <li><div><h3>Entregamos o projeto detalhado</h3><p>Plantas, marcenaria e acabamentos prontos para os profissionais executarem sem dúvidas.</p></div></li>
+        </ol>
+        <div class="cta-secao">
+          <a class="btn btn-terracota" target="_blank" rel="noopener" href="https://wa.me/5548996556442?text=Ol%C3%A1%2C%20Laganni!%20Quero%20come%C3%A7ar%20a%20conversa%20sobre%20o%20projeto%20da%20minha%20casa."><svg aria-hidden="true"><use href="#i-zap"/></svg>Começar pela conversa</a>
+          <p>A primeira conversa não custa nada.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq" aria-labelledby="t-faq">
+    <div class="wrap grade">
+      <div>
+        <h2 id="t-faq" class="titulo">Antes de você perguntar</h2>
+        <p class="intro">Não achou a sua dúvida? Manda no WhatsApp que a gente responde.</p>
+      </div>
+      <div>
+        <details>
+          <summary>Preciso quebrar tudo para a casa mudar?</summary>
+          <p>Não. Boa parte das transformações vem de layout, iluminação, pintura e móveis sob medida. Quando derrubar uma parede vale a pena, a gente mostra o porquê e o que muda no dia a dia.</p>
+        </details>
+        <details>
+          <summary>Dá para fazer só um ambiente?</summary>
+          <p>Dá. Muita gente começa pela cozinha, pela sala ou pela suíte e deixa o resto para uma segunda etapa, seguindo o mesmo projeto.</p>
+        </details>
+        <details>
+          <summary>Quanto custa o projeto?</summary>
+          <p>Depende do tamanho do imóvel e de quantos ambientes entram. Conte o que você precisa no formulário abaixo e enviamos uma proposta sob medida.</p>
+        </details>
+        <details>
+          <summary>Vocês atendem fora de Florianópolis?</summary>
+          <p>Sim. Na Grande Florianópolis podemos ir até o imóvel. Para outras cidades o projeto é on-line: você envia medidas, fotos e vídeos, e as reuniões acontecem por videochamada.</p>
+        </details>
+        <details>
+          <summary>Vocês indicam quem executa a obra?</summary>
+          <p>O projeto sai detalhado para qualquer profissional seguir, e a gente fica à disposição para tirar as dúvidas de quem estiver executando.</p>
+        </details>
+        <div class="cta-secao">
+          <a class="btn btn-terracota" target="_blank" rel="noopener" href="https://wa.me/5548996556442?text=Ol%C3%A1%2C%20Laganni!%20Tenho%20uma%20d%C3%BAvida%20sobre%20o%20projeto%20da%20minha%20casa."><svg aria-hidden="true"><use href="#i-zap"/></svg>Perguntar no WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="orcamento" class="contato escuro" aria-labelledby="t-orc">
+    <div class="wrap grade">
+      <div>
+        <h2 id="t-orc">Conte sobre a sua casa</h2>
+        <p class="intro">Leva menos de um minuto. Sua mensagem abre pronta no WhatsApp das arquitetas, é só enviar.</p>
+        <div class="dados">
+          <a href="https://wa.me/5548996556442" target="_blank" rel="noopener">WhatsApp (48) 99655-6442</a>
+          <a href="https://www.instagram.com/laganniarquitetura/" target="_blank" rel="noopener">@laganniarquitetura</a>
+          <span>Florianópolis, SC</span>
+        </div>
+      </div>
+      <form id="form" novalidate>
+        <label class="campo">Seu nome
+          <input type="text" name="nome" autocomplete="name" maxlength="80" required>
+        </label>
+        <fieldset>
+          <legend>O que você quer mudar?</legend>
+          <div class="chips">
+            <label><input type="checkbox" name="amb" value="a casa inteira"><span>A casa inteira</span></label>
+            <label><input type="checkbox" name="amb" value="sala e cozinha"><span>Sala e cozinha</span></label>
+            <label><input type="checkbox" name="amb" value="quartos e suítes"><span>Quartos e suítes</span></label>
+            <label><input type="checkbox" name="amb" value="banheiros"><span>Banheiros</span></label>
+            <label><input type="checkbox" name="amb" value="área externa"><span>Área externa</span></label>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Como está a casa hoje?</legend>
+          <div class="chips">
+            <label><input type="radio" name="fase" value="Moro nela e quero reformar" checked><span>Moro nela e quero reformar</span></label>
+            <label><input type="radio" name="fase" value="Acabei de comprar"><span>Acabei de comprar</span></label>
+            <label><input type="radio" name="fase" value="Está em construção"><span>Está em construção</span></label>
+          </div>
+        </fieldset>
+        <label class="campo">Cidade
+          <input type="text" name="cidade" autocomplete="address-level2" maxlength="60" placeholder="Ex.: Florianópolis">
+        </label>
+        <p class="erro" id="erro" role="alert"></p>
+        <button class="btn btn-terracota" type="submit"><svg aria-hidden="true"><use href="#i-zap"/></svg>Enviar pelo WhatsApp</button>
+        <p class="nota">Seus dados vão apenas para a conversa com a Laganni.</p>
+      </form>
+    </div>
+    <figure class="wrap"><img class="arco" src="assets/varanda-gourmet.webp" alt="" width="1400" height="1179" loading="lazy"></figure>
+  </section>
+
+</main>
+
+<footer class="rodape">
+  <div class="wrap">
+    <span>© 2026 Laganni Arquitetura, Florianópolis</span>
+    <nav aria-label="Redes">
+      <a href="https://www.instagram.com/laganniarquitetura/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.linkedin.com/company/laganniarquitetura" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://wa.me/5548996556442" target="_blank" rel="noopener">WhatsApp</a>
+    </nav>
+  </div>
+</footer>
+
+<a class="zap" href="https://wa.me/5548996556442?text=Ol%C3%A1%2C%20Laganni!%20Vim%20pelo%20site%20e%20quero%20um%20or%C3%A7amento%20para%20a%20minha%20casa." target="_blank" rel="noopener" aria-label="Conversar com a Laganni no WhatsApp"><svg aria-hidden="true"><use href="#i-zap"/></svg></a>
+
+<script>
+document.getElementById('form').addEventListener('submit', function (e) {
+  e.preventDefault();
+  var nome = this.nome.value.trim();
+  var erro = document.getElementById('erro');
+  if (nome.length < 2) {
+    erro.textContent = 'Escreva seu nome para as arquitetas saberem com quem vão falar.';
+    this.nome.focus();
+    return;
+  }
+  erro.textContent = '';
+  var ambientes = Array.prototype.map.call(this.querySelectorAll('[name=amb]:checked'), function (i) { return i.value; });
+  var cidade = this.cidade.value.trim();
+  var msg = 'Olá, Laganni! Sou ' + nome + ' e vim pelo site.\n' +
+    'Situação: ' + this.fase.value +
+    (ambientes.length ? '\nQuero mudar: ' + ambientes.join(', ') : '') +
+    (cidade ? '\nCidade: ' + cidade : '') +
+    '\nGostaria de um orçamento.';
+  window.open('https://wa.me/5548996556442?text=' + encodeURIComponent(msg), '_blank', 'noopener');
+});
+</script>
+</body>
+</html>
