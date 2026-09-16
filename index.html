@@ -98,7 +98,8 @@ section{padding:112px 0;scroll-margin-top:60px}
 .entregas li{padding:26px 0;border-top:1px solid var(--linha)}
 .entregas h3{font:600 1.08rem/1.3 var(--sans);margin-bottom:6px}
 .entregas p{color:var(--texto-2);font-size:.98rem}
-@media (max-width:900px){.entregas .grade{grid-template-columns:1fr;gap:32px}.entregas ol{grid-template-columns:1fr;gap:0}}
+.cta-entregas{grid-column:2;margin-top:-24px}
+@media (max-width:900px){.cta-entregas{grid-column:auto;margin-top:8px}.entregas .grade{grid-template-columns:1fr;gap:32px}.entregas ol{grid-template-columns:1fr;gap:0}}
 
 /* galeria */
 .galeria{display:grid;grid-template-columns:repeat(12,1fr);gap:16px;margin-top:56px}
@@ -336,7 +337,6 @@ legend{font-size:.95rem;font-weight:500;color:#DCE3E9;margin-bottom:10px;padding
         <div class="cta-secao">
           <a class="btn btn-terracota" target="_blank" rel="noopener" href="https://wa.me/5548996556442?text=Ol%C3%A1%2C%20Ester%20e%20Lauren!%20Vim%20pelo%20site%20e%20quero%20conversar%20sobre%20um%20projeto."><svg aria-hidden="true"><use href="#i-zap"/></svg>Falar com a Ester e a Lauren</a>
         </div>
-        <a class="insta" href="https://www.instagram.com/laganniarquitetura/" target="_blank" rel="noopener">Acompanhe os bastidores no @laganniarquitetura</a>
       </div>
     </div>
   </section>
@@ -361,53 +361,6 @@ legend{font-size:.95rem;font-weight:500;color:#DCE3E9;margin-bottom:10px;padding
         </ul>
         <p class="fecho">Se duas ou mais são a sua casa, é exatamente disso que a gente cuida todo dia.</p>
       </div>
-    </div>
-  </section>
-
-  <section class="entregas" aria-labelledby="t-entregas">
-    <div class="wrap grade">
-      <div>
-        <h2 id="t-entregas" class="titulo">O que você recebe</h2>
-        <p class="intro">Um projeto é o contrário do improviso: tudo decidido no papel, com quem executa sabendo exatamente o que fazer.</p>
-      </div>
-      <ol>
-        <li><h3>Estudo do layout</h3><p>A casa reorganizada no papel, para você ver a circulação antes de mover um móvel.</p></li>
-        <li><h3>Imagens 3D realistas</h3><p>Cores, revestimentos e móveis aprovados olhando, não imaginando.</p></li>
-        <li><h3>Plantas para a obra</h3><p>Elétrica, iluminação, forro e revestimentos marcados para quem executa seguir.</p></li>
-        <li><h3>Marcenaria detalhada</h3><p>Cada móvel sob medida com medidas e acabamentos, para o marceneiro orçar sem achismo.</p></li>
-        <li><h3>Lista de acabamentos</h3><p>O que comprar, onde usar e quanto precisa, para o orçamento não fugir do controle.</p></li>
-        <li><h3>Suporte durante a obra</h3><p>As dúvidas de quem está executando respondidas por quem desenhou o projeto.</p></li>
-      </ol>
-    </div>
-  </section>
-
-  <section id="projetos" aria-labelledby="t-proj">
-    <div class="wrap">
-      <h2 id="t-proj" class="titulo">Ambientes que já saíram do papel</h2>
-      <p class="intro">Casas de famílias diferentes, com gostos diferentes. O que se repete é o cuidado com cada canto.</p>
-      <div class="galeria">
-        <figure class="a1"><div class="quadro"><img src="assets/sala-integrada.webp" alt="Sala de estar clara integrada ao jantar, com arco de passagem e tapete" width="1400" height="1179" loading="lazy"></div><figcaption>Sala de estar</figcaption></figure>
-        <figure class="a2"><div class="quadro"><img src="assets/cozinha.webp" alt="Cozinha com ilha, armários claros e coifa revestida de madeira" width="1400" height="1178" loading="lazy"></div><figcaption>Cozinha com ilha</figcaption></figure>
-        <figure class="a3"><div class="quadro"><img src="assets/jantar.webp" alt="Sala de jantar com mesa de madeira maciça, lustre de cúpulas e adega embutida" width="1400" height="1179" loading="lazy"></div><figcaption>Sala de jantar</figcaption></figure>
-        <figure class="a4"><div class="quadro"><img src="assets/quarto.webp" alt="Quarto com cabeceira estofada, armários altos e iluminação em trilho" width="1400" height="1179" loading="lazy"></div><figcaption>Dormitório</figcaption></figure>
-        <figure class="a5"><div class="quadro"><img src="assets/banheiro-banheira.webp" alt="Banheiro com banheira, revestimento travertino e pendentes de vidro" width="1200" height="1011" loading="lazy"></div><figcaption>Banheiro com banheira</figcaption></figure>
-        <figure class="a6"><div class="quadro"><img src="assets/closet.webp" alt="Closet com ilha central, portas de vidro iluminadas e lustre" width="1400" height="1179" loading="lazy"></div><figcaption>Closet</figcaption></figure>
-        <figure class="a7"><div class="quadro"><img src="assets/piscina.webp" alt="Área externa com piscina, espreguiçadeiras e jardim de folhagens" width="1500" height="1263" loading="lazy"></div><figcaption>Área externa com piscina</figcaption></figure>
-        <figure class="a8"><div class="quadro"><img src="assets/casa-quintal.webp" alt="Varanda com pilares cobertos de primaveras abrindo para o gramado" width="1600" height="829" loading="lazy"></div><figcaption>Varanda e quintal</figcaption></figure>
-        <figure class="a9"><div class="quadro"><img src="assets/lavabo.webp" alt="Lavabo com papel de parede, cuba de coluna e espelho oval dourado" width="1000" height="842" loading="lazy"></div><figcaption>Lavabo</figcaption></figure>
-        <figure class="a10"><div class="quadro"><img src="assets/fachada-moderna.webp" alt="Fachada de casa moderna iluminada ao entardecer, com jardim e caminho de pedras" width="1600" height="1348" loading="lazy"></div><figcaption>Fachada</figcaption></figure>
-      </div>
-      <div class="cta-secao">
-        <a class="btn btn-terracota" target="_blank" rel="noopener" href="https://wa.me/5548996556442?text=Ol%C3%A1%2C%20Laganni!%20Vi%20os%20projetos%20no%20site%20e%20quero%20um%20or%C3%A7amento%20para%20a%20minha%20casa."><svg aria-hidden="true"><use href="#i-zap"/></svg>Quero um projeto assim</a>
-        <a class="btn btn-contorno" href="https://www.instagram.com/laganniarquitetura/" target="_blank" rel="noopener">Ver mais no Instagram</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="faixa" aria-label="Pedir orçamento">
-    <div class="wrap">
-      <p>Conte o que incomoda na sua casa. A gente diz por onde começar.</p>
-      <a class="btn" href="#orcamento">Pedir meu orçamento</a>
     </div>
   </section>
 
@@ -459,6 +412,56 @@ legend{font-size:.95rem;font-weight:500;color:#DCE3E9;margin-bottom:10px;padding
     </div>
   </section>
 
+  <section class="entregas" aria-labelledby="t-entregas">
+    <div class="wrap grade">
+      <div>
+        <h2 id="t-entregas" class="titulo">O que você recebe</h2>
+        <p class="intro">Um projeto é o contrário do improviso: tudo decidido no papel, com quem executa sabendo exatamente o que fazer.</p>
+      </div>
+      <ol>
+        <li><h3>Estudo do layout</h3><p>A casa reorganizada no papel, para você ver a circulação antes de mover um móvel.</p></li>
+        <li><h3>Imagens 3D realistas</h3><p>Cores, revestimentos e móveis aprovados olhando, não imaginando.</p></li>
+        <li><h3>Plantas para a obra</h3><p>Elétrica, iluminação, forro e revestimentos marcados para quem executa seguir.</p></li>
+        <li><h3>Marcenaria detalhada</h3><p>Cada móvel sob medida com medidas e acabamentos, para o marceneiro orçar sem achismo.</p></li>
+        <li><h3>Lista de acabamentos</h3><p>O que comprar, onde usar e quanto precisa, para o orçamento não fugir do controle.</p></li>
+        <li><h3>Suporte durante a obra</h3><p>As dúvidas de quem está executando respondidas por quem desenhou o projeto.</p></li>
+      </ol>
+      <div class="cta-secao cta-entregas">
+        <a class="btn btn-terracota" target="_blank" rel="noopener" href="https://wa.me/5548996556442?text=Ol%C3%A1%2C%20Laganni!%20Quero%20saber%20o%20que%20entra%20no%20projeto%20da%20minha%20casa."><svg aria-hidden="true"><use href="#i-zap"/></svg>Quero esse projeto para a minha casa</a>
+        <p>Orçamento sem compromisso.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="projetos" aria-labelledby="t-proj">
+    <div class="wrap">
+      <h2 id="t-proj" class="titulo">Ambientes que já saíram do papel</h2>
+      <p class="intro">Casas de famílias diferentes, com gostos diferentes. O que se repete é o cuidado com cada canto.</p>
+      <div class="galeria">
+        <figure class="a1"><div class="quadro"><img src="assets/sala-integrada.webp" alt="Sala de estar clara integrada ao jantar, com arco de passagem e tapete" width="1400" height="1179" loading="lazy"></div><figcaption>Sala de estar</figcaption></figure>
+        <figure class="a2"><div class="quadro"><img src="assets/cozinha.webp" alt="Cozinha com ilha, armários claros e coifa revestida de madeira" width="1400" height="1178" loading="lazy"></div><figcaption>Cozinha com ilha</figcaption></figure>
+        <figure class="a3"><div class="quadro"><img src="assets/jantar.webp" alt="Sala de jantar com mesa de madeira maciça, lustre de cúpulas e adega embutida" width="1400" height="1179" loading="lazy"></div><figcaption>Sala de jantar</figcaption></figure>
+        <figure class="a4"><div class="quadro"><img src="assets/quarto.webp" alt="Quarto com cabeceira estofada, armários altos e iluminação em trilho" width="1400" height="1179" loading="lazy"></div><figcaption>Dormitório</figcaption></figure>
+        <figure class="a5"><div class="quadro"><img src="assets/banheiro-banheira.webp" alt="Banheiro com banheira, revestimento travertino e pendentes de vidro" width="1200" height="1011" loading="lazy"></div><figcaption>Banheiro com banheira</figcaption></figure>
+        <figure class="a6"><div class="quadro"><img src="assets/closet.webp" alt="Closet com ilha central, portas de vidro iluminadas e lustre" width="1400" height="1179" loading="lazy"></div><figcaption>Closet</figcaption></figure>
+        <figure class="a7"><div class="quadro"><img src="assets/piscina.webp" alt="Área externa com piscina, espreguiçadeiras e jardim de folhagens" width="1500" height="1263" loading="lazy"></div><figcaption>Área externa com piscina</figcaption></figure>
+        <figure class="a8"><div class="quadro"><img src="assets/casa-quintal.webp" alt="Varanda com pilares cobertos de primaveras abrindo para o gramado" width="1600" height="829" loading="lazy"></div><figcaption>Varanda e quintal</figcaption></figure>
+        <figure class="a9"><div class="quadro"><img src="assets/lavabo.webp" alt="Lavabo com papel de parede, cuba de coluna e espelho oval dourado" width="1000" height="842" loading="lazy"></div><figcaption>Lavabo</figcaption></figure>
+        <figure class="a10"><div class="quadro"><img src="assets/fachada-moderna.webp" alt="Fachada de casa moderna iluminada ao entardecer, com jardim e caminho de pedras" width="1600" height="1348" loading="lazy"></div><figcaption>Fachada</figcaption></figure>
+      </div>
+      <div class="cta-secao">
+        <a class="btn btn-terracota" target="_blank" rel="noopener" href="https://wa.me/5548996556442?text=Ol%C3%A1%2C%20Laganni!%20Vi%20os%20projetos%20no%20site%20e%20quero%20um%20or%C3%A7amento%20para%20a%20minha%20casa."><svg aria-hidden="true"><use href="#i-zap"/></svg>Quero um projeto assim</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="faixa" aria-label="Pedir orçamento">
+    <div class="wrap">
+      <p>Conte o que incomoda na sua casa. A gente diz por onde começar.</p>
+      <a class="btn" href="#orcamento">Pedir meu orçamento</a>
+    </div>
+  </section>
+
   <section id="como-funciona" class="etapas" aria-labelledby="t-etapas">
     <div class="wrap grade">
       <div>
@@ -497,7 +500,7 @@ legend{font-size:.95rem;font-weight:500;color:#DCE3E9;margin-bottom:10px;padding
         </details>
         <details>
           <summary>Quanto custa o projeto?</summary>
-          <p>Depende do tamanho do imóvel e de quantos ambientes entram. Conte o que você precisa no formulário abaixo e enviamos uma proposta sob medida.</p>
+          <p>Depende do tamanho do imóvel e de quantos ambientes entram, por isso a proposta é feita sob medida. Vale pensar assim: o projeto evita compra errada, marcenaria refeita e parede quebrada duas vezes, que costumam custar mais caro do que ele. Conte o que você precisa no formulário abaixo.</p>
         </details>
         <details>
           <summary>Vocês atendem fora de Florianópolis?</summary>
