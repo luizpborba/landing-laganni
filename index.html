@@ -209,6 +209,23 @@ legend{font-size:.95rem;font-weight:500;color:#DCE3E9;margin-bottom:10px;padding
 .rodape .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
 .rodape nav{display:flex;gap:22px}
 
+/* confianca no hero */
+.confianca{display:flex;align-items:center;gap:14px;margin-top:28px}
+.rostos{display:flex;flex:none}
+.rostos img{width:48px;height:48px;border-radius:50%;border:2px solid var(--creme);object-fit:cover}
+.rostos img+img{margin-left:-14px}
+.confianca p{font-size:.95rem;line-height:1.45;color:var(--texto-2)}
+.confianca strong{color:var(--texto);font-weight:600}
+
+/* barra fixa de conversao no celular */
+.barra-cta{display:none}
+@media (max-width:900px){
+  .barra-cta{display:flex;align-items:center;justify-content:center;gap:10px;position:fixed;left:12px;right:12px;bottom:12px;z-index:40;padding:16px;border-radius:999px;background:#1E9E57;color:#fff;font:600 1rem/1 var(--sans);text-decoration:none;box-shadow:0 10px 28px rgba(20,25,35,.3);transform:translateY(140%);transition:transform .3s ease}
+  .barra-cta svg{width:22px;height:22px}
+  .barra-cta.visivel{transform:none}
+  body .zap{display:none}
+  body .rodape{padding-bottom:120px}
+}
 .zap{position:fixed;right:20px;bottom:20px;z-index:30;width:58px;height:58px;border-radius:50%;background:#1E9E57;color:#fff;display:grid;place-items:center;box-shadow:0 10px 28px rgba(20,25,35,.28)}
 .zap:hover{background:#178649}
 .zap svg{width:28px;height:28px}
@@ -289,13 +306,17 @@ legend{font-size:.95rem;font-weight:500;color:#DCE3E9;margin-bottom:10px;padding
             <a class="btn btn-terracota" target="_blank" rel="noopener" href="https://wa.me/5548996556442?text=Ol%C3%A1%2C%20Laganni!%20Vim%20pelo%20site%20e%20quero%20um%20projeto%20para%20reformar%20a%20minha%20casa."><svg aria-hidden="true"><use href="#i-zap"/></svg>Quero reformar minha casa</a>
             <a class="btn btn-contorno" href="#projetos">Ver projetos</a>
           </div>
+          <div class="confianca">
+            <span class="rostos" aria-hidden="true"><img src="assets/avatar-1.webp" alt="" width="48" height="48"><img src="assets/avatar-2.webp" alt="" width="48" height="48"></span>
+            <p><strong>+300 projetos</strong> por Ester e Lauren<br>7,7 mil seguidores no Instagram</p>
+          </div>
         </div>
       </div>
       <figure>
         <img class="arco" src="assets/sala-lareira.webp" alt="Sala de estar com lareira, painel de mármore, nichos iluminados e lustre de braços" width="1616" height="1361" fetchpriority="high">
         <figcaption>
           <span>Sala de estar projetada pela Laganni</span>
-          <span class="selo"><span><b>+300</b>projetos elaborados</span><span><b>SC</b>presencial e on-line</span></span>
+          <span>Atendimento presencial em Florianópolis e on-line</span>
         </figcaption>
       </figure>
     </div>
@@ -453,7 +474,7 @@ legend{font-size:.95rem;font-weight:500;color:#DCE3E9;margin-bottom:10px;padding
         </ol>
         <div class="cta-secao">
           <a class="btn btn-terracota" target="_blank" rel="noopener" href="https://wa.me/5548996556442?text=Ol%C3%A1%2C%20Laganni!%20Quero%20come%C3%A7ar%20a%20conversa%20sobre%20o%20projeto%20da%20minha%20casa."><svg aria-hidden="true"><use href="#i-zap"/></svg>Começar pela conversa</a>
-          <p>A primeira conversa não custa nada.</p>
+          <p>Orçamento sem compromisso.</p>
         </div>
       </div>
     </div>
@@ -550,9 +571,29 @@ legend{font-size:.95rem;font-weight:500;color:#DCE3E9;margin-bottom:10px;padding
   </div>
 </footer>
 
-<a class="zap" href="https://wa.me/5548996556442?text=Ol%C3%A1%2C%20Laganni!%20Vim%20pelo%20site%20e%20quero%20um%20or%C3%A7amento%20para%20a%20minha%20casa." target="_blank" rel="noopener" aria-label="Conversar com a Laganni no WhatsApp"><svg aria-hidden="true"><use href="#i-zap"/></svg></a>
+<a class="barra-cta" href="https://wa.me/5548996556442?text=Ol%C3%A1%2C%20Laganni!%20Vim%20pelo%20site%20e%20quero%20um%20or%C3%A7amento%20para%20a%20minha%20casa." target="_blank" rel="noopener" data-local="barra-fixa"><svg aria-hidden="true"><use href="#i-zap"/></svg>Pedir orçamento no WhatsApp</a>
+
+<a class="zap" data-local="botao-flutuante" href="https://wa.me/5548996556442?text=Ol%C3%A1%2C%20Laganni!%20Vim%20pelo%20site%20e%20quero%20um%20or%C3%A7amento%20para%20a%20minha%20casa." target="_blank" rel="noopener" aria-label="Conversar com a Laganni no WhatsApp"><svg aria-hidden="true"><use href="#i-zap"/></svg></a>
 
 <script>
+var barra = document.querySelector('.barra-cta');
+if (barra && 'IntersectionObserver' in window) {
+  new IntersectionObserver(function (entradas) {
+    barra.classList.toggle('visivel', !entradas[0].isIntersecting);
+  }).observe(document.querySelector('.hero'));
+}
+
+// Eventos para o Google Tag Manager / GA4 quando forem instalados
+function registrar(evento, dados) {
+  (window.dataLayer = window.dataLayer || []).push(Object.assign({ event: evento }, dados));
+}
+document.addEventListener('click', function (e) {
+  var link = e.target.closest('a[href*="wa.me"]');
+  if (!link) return;
+  var secao = link.closest('section');
+  registrar('clique_whatsapp', { local: link.dataset.local || (secao && (secao.id || secao.className)) || 'rodape' });
+});
+
 document.getElementById('form').addEventListener('submit', function (e) {
   e.preventDefault();
   var nome = this.nome.value.trim();
@@ -570,6 +611,7 @@ document.getElementById('form').addEventListener('submit', function (e) {
     (ambientes.length ? '\nQuero mudar: ' + ambientes.join(', ') : '') +
     (cidade ? '\nCidade: ' + cidade : '') +
     '\nGostaria de um orçamento.';
+  registrar('envio_formulario', { ambientes: ambientes.join(', '), situacao: this.fase.value });
   window.open('https://wa.me/5548996556442?text=' + encodeURIComponent(msg), '_blank', 'noopener');
 });
 </script>
