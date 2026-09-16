@@ -127,7 +127,7 @@ section{padding:112px 0;scroll-margin-top:60px}
 }
 
 /* faixa */
-.faixa{background:var(--terracota);color:#fff}
+.faixa{background:var(--terracota);color:#fff;padding:0}
 .faixa .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:28px;padding-top:56px;padding-bottom:56px}
 .faixa p{font:400 clamp(1.5rem,2.8vw,2.2rem)/1.15 var(--display);max-width:22ch}
 .faixa .btn{background:#fff;color:var(--terracota-escura)}
@@ -210,6 +210,23 @@ legend{font-size:.95rem;font-weight:500;color:#DCE3E9;margin-bottom:10px;padding
 .rodape .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
 .rodape nav{display:flex;gap:22px}
 
+/* quiz de entrada */
+.quiz{display:flex;flex-wrap:wrap;gap:10px}
+.quiz button{font:600 .98rem/1 var(--sans);color:#fff;background:transparent;border:1.5px solid rgba(255,255,255,.75);border-radius:999px;padding:.9em 1.3em;cursor:pointer;transition:background-color .2s,color .2s}
+.quiz button:hover,.quiz button:focus-visible{background:#fff;color:var(--terracota-escura)}
+.faixa .wrap{flex-direction:column;align-items:flex-start;gap:22px}
+
+/* formulario em etapas */
+.progresso{height:4px;background:#5B6580;border-radius:4px;overflow:hidden}
+.progresso span{display:block;height:100%;width:33.34%;background:var(--nude);transition:width .3s ease}
+.passo-info{font-size:.88rem;color:#A9B3C2;margin-top:-8px}
+.passo{display:grid;gap:22px}
+.passo[hidden]{display:none}
+#form{scroll-margin-top:96px}
+.botoes-passo{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.botoes-passo .btn{flex:1;min-width:200px}
+.voltar{font:600 .95rem/1 var(--sans);color:#DCE3E9;background:transparent;border:0;padding:1em .4em;cursor:pointer;text-decoration:underline;text-underline-offset:4px}
+
 /* confianca no hero */
 .confianca{display:flex;align-items:center;gap:14px;margin-top:28px}
 .rostos{display:flex;flex:none}
@@ -286,12 +303,7 @@ legend{font-size:.95rem;font-weight:500;color:#DCE3E9;margin-bottom:10px;padding
 <header class="topo">
   <div class="wrap">
     <a href="#inicio" aria-label="Laganni Arquitetura, voltar ao início"><img src="assets/logo.svg" alt="Laganni Arquitetura" width="173" height="47"></a>
-    <nav aria-label="Principal">
-      <a href="#projetos">Projetos</a>
-      <a href="#antes-e-depois">Antes e depois</a>
-      <a href="#como-funciona">Como funciona</a>
-      <a class="btn btn-terracota" href="#orcamento">Pedir orçamento</a>
-    </nav>
+    <a class="btn btn-terracota" href="#orcamento" data-local="topo">Quero meu orçamento</a>
   </div>
 </header>
 
@@ -302,7 +314,7 @@ legend{font-size:.95rem;font-weight:500;color:#DCE3E9;margin-bottom:10px;padding
       <div class="hero-texto">
         <h1 id="t-hero">Transformar a sua casa não é quebrar tudo.</h1>
         <div class="hero-lado">
-          <p>A gente olha o que você já tem, mantém o que funciona e redesenha o resto do jeito que a sua família vive hoje. Você aprova cada ambiente em 3D antes de a obra começar.</p>
+          <p>A gente mantém o que funciona e redesenha o resto do jeito que a sua família vive. Você aprova tudo em 3D antes da obra.</p>
           <div class="acoes">
             <a class="btn btn-terracota" target="_blank" rel="noopener" href="https://wa.me/5548996556442?text=Ol%C3%A1%2C%20Laganni!%20Vim%20pelo%20site%20e%20quero%20um%20projeto%20para%20reformar%20a%20minha%20casa."><svg aria-hidden="true"><use href="#i-zap"/></svg>Quero reformar minha casa</a>
             <a class="btn btn-contorno" href="#projetos">Ver projetos</a>
@@ -345,7 +357,7 @@ legend{font-size:.95rem;font-weight:500;color:#DCE3E9;margin-bottom:10px;padding
     <div class="wrap grade">
       <div>
         <h2 id="t-dores" class="titulo">Você se reconhece em alguma dessas?</h2>
-        <p class="intro">São as frases que mais ouvimos de quem já mora na casa e sente que ela poderia render muito mais.</p>
+        <p class="intro">Frases que ouvimos toda semana de quem já mora na casa.</p>
         <div class="cta-secao">
           <a class="btn btn-terracota" target="_blank" rel="noopener" href="https://wa.me/5548996556442?text=Ol%C3%A1%2C%20Laganni!%20Minha%20casa%20precisa%20de%20mudan%C3%A7as%20e%20eu%20n%C3%A3o%20sei%20por%20onde%20come%C3%A7ar."><svg aria-hidden="true"><use href="#i-zap"/></svg>Contar meu caso</a>
         </div>
@@ -367,7 +379,7 @@ legend{font-size:.95rem;font-weight:500;color:#DCE3E9;margin-bottom:10px;padding
   <section id="antes-e-depois" class="escuro" aria-labelledby="t-ad">
     <div class="wrap">
       <h2 id="t-ad" class="titulo">O antes que a gente encontra e o depois que a gente entrega</h2>
-      <p class="intro">As fotos do antes são dos imóveis como estavam. O depois é o projeto que os clientes aprovaram em 3D antes de contratar a obra.</p>
+      <p class="intro">Antes: o imóvel como estava. Depois: o projeto que o cliente aprovou em 3D.</p>
 
       <div class="pares">
         <article class="par">
@@ -412,11 +424,32 @@ legend{font-size:.95rem;font-weight:500;color:#DCE3E9;margin-bottom:10px;padding
     </div>
   </section>
 
+  <section id="como-funciona" class="etapas" aria-labelledby="t-etapas">
+    <div class="wrap grade">
+      <div>
+        <h2 id="t-etapas" class="titulo">Como funciona</h2>
+        <p class="intro">Do primeiro recado até a obra, você sabe o que acontece em cada fase.</p>
+      </div>
+      <div>
+        <ol>
+          <li><div><h3>Você conta como a família vive</h3><p>A rotina, o que incomoda hoje e o que sempre quiseram ter. Pode ser pessoalmente ou por videochamada.</p></div></li>
+          <li><div><h3>A gente mede e entende a casa</h3><p>Levantamento do imóvel, das necessidades e do quanto você pretende investir na obra.</p></div></li>
+          <li><div><h3>Você aprova tudo em 3D</h3><p>Os ambientes aparecem prontos na tela e são ajustados até ficarem do seu jeito.</p></div></li>
+          <li><div><h3>Entregamos o projeto detalhado</h3><p>Plantas, marcenaria e acabamentos prontos para os profissionais executarem sem dúvidas.</p></div></li>
+        </ol>
+        <div class="cta-secao">
+          <a class="btn btn-terracota" target="_blank" rel="noopener" href="https://wa.me/5548996556442?text=Ol%C3%A1%2C%20Laganni!%20Quero%20come%C3%A7ar%20a%20conversa%20sobre%20o%20projeto%20da%20minha%20casa."><svg aria-hidden="true"><use href="#i-zap"/></svg>Começar pela conversa</a>
+          <p>Orçamento sem compromisso.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="entregas" aria-labelledby="t-entregas">
     <div class="wrap grade">
       <div>
         <h2 id="t-entregas" class="titulo">O que você recebe</h2>
-        <p class="intro">Um projeto é o contrário do improviso: tudo decidido no papel, com quem executa sabendo exatamente o que fazer.</p>
+        <p class="intro">Tudo decidido no papel. Quem executa sabe exatamente o que fazer.</p>
       </div>
       <ol>
         <li><h3>Estudo do layout</h3><p>A casa reorganizada no papel, para você ver a circulação antes de mover um móvel.</p></li>
@@ -436,7 +469,7 @@ legend{font-size:.95rem;font-weight:500;color:#DCE3E9;margin-bottom:10px;padding
   <section id="projetos" aria-labelledby="t-proj">
     <div class="wrap">
       <h2 id="t-proj" class="titulo">Ambientes que já saíram do papel</h2>
-      <p class="intro">Casas de famílias diferentes, com gostos diferentes. O que se repete é o cuidado com cada canto.</p>
+      <p class="intro">Casas diferentes, gostos diferentes. O mesmo cuidado em cada canto.</p>
       <div class="galeria">
         <figure class="a1"><div class="quadro"><img src="assets/sala-integrada.webp" alt="Sala de estar clara integrada ao jantar, com arco de passagem e tapete" width="1400" height="1179" loading="lazy"></div><figcaption>Sala de estar</figcaption></figure>
         <figure class="a2"><div class="quadro"><img src="assets/cozinha.webp" alt="Cozinha com ilha, armários claros e coifa revestida de madeira" width="1400" height="1178" loading="lazy"></div><figcaption>Cozinha com ilha</figcaption></figure>
@@ -457,28 +490,13 @@ legend{font-size:.95rem;font-weight:500;color:#DCE3E9;margin-bottom:10px;padding
 
   <section class="faixa" aria-label="Pedir orçamento">
     <div class="wrap">
-      <p>Conte o que incomoda na sua casa. A gente diz por onde começar.</p>
-      <a class="btn" href="#orcamento">Pedir meu orçamento</a>
-    </div>
-  </section>
-
-  <section id="como-funciona" class="etapas" aria-labelledby="t-etapas">
-    <div class="wrap grade">
-      <div>
-        <h2 id="t-etapas" class="titulo">Como funciona</h2>
-        <p class="intro">Do primeiro recado no WhatsApp até a obra, com você sabendo o que acontece em cada fase.</p>
-      </div>
-      <div>
-        <ol>
-          <li><div><h3>Você conta como a família vive</h3><p>A rotina, o que incomoda hoje e o que sempre quiseram ter. Pode ser pessoalmente ou por videochamada.</p></div></li>
-          <li><div><h3>A gente mede e entende a casa</h3><p>Levantamento do imóvel, das necessidades e do quanto você pretende investir na obra.</p></div></li>
-          <li><div><h3>Você aprova tudo em 3D</h3><p>Os ambientes aparecem prontos na tela e são ajustados até ficarem do seu jeito.</p></div></li>
-          <li><div><h3>Entregamos o projeto detalhado</h3><p>Plantas, marcenaria e acabamentos prontos para os profissionais executarem sem dúvidas.</p></div></li>
-        </ol>
-        <div class="cta-secao">
-          <a class="btn btn-terracota" target="_blank" rel="noopener" href="https://wa.me/5548996556442?text=Ol%C3%A1%2C%20Laganni!%20Quero%20come%C3%A7ar%20a%20conversa%20sobre%20o%20projeto%20da%20minha%20casa."><svg aria-hidden="true"><use href="#i-zap"/></svg>Começar pela conversa</a>
-          <p>Orçamento sem compromisso.</p>
-        </div>
+      <p>O que você quer transformar na sua casa?</p>
+      <div class="quiz" role="group" aria-label="Escolha o ambiente para começar o orçamento">
+        <button type="button" data-amb="a casa inteira">A casa inteira</button>
+        <button type="button" data-amb="sala e cozinha">Sala e cozinha</button>
+        <button type="button" data-amb="quartos e suítes">Quartos e suítes</button>
+        <button type="button" data-amb="banheiros">Banheiros</button>
+        <button type="button" data-amb="área externa">Área externa</button>
       </div>
     </div>
   </section>
@@ -487,7 +505,7 @@ legend{font-size:.95rem;font-weight:500;color:#DCE3E9;margin-bottom:10px;padding
     <div class="wrap grade">
       <div>
         <h2 id="t-faq" class="titulo">Antes de você perguntar</h2>
-        <p class="intro">Não achou a sua dúvida? Manda no WhatsApp que a gente responde.</p>
+        <p class="intro">Não achou a sua dúvida? Pergunte no WhatsApp.</p>
       </div>
       <div>
         <details>
@@ -521,40 +539,63 @@ legend{font-size:.95rem;font-weight:500;color:#DCE3E9;margin-bottom:10px;padding
     <div class="wrap grade">
       <div>
         <h2 id="t-orc">Conte sobre a sua casa</h2>
-        <p class="intro">Leva menos de um minuto. Sua mensagem abre pronta no WhatsApp das arquitetas, é só enviar.</p>
+        <p class="intro">Três perguntas rápidas. No fim, a mensagem abre pronta no WhatsApp, é só enviar.</p>
         <div class="dados">
-          <a href="https://wa.me/5548996556442" target="_blank" rel="noopener">WhatsApp (48) 99655-6442</a>
-          <a href="https://www.instagram.com/laganniarquitetura/" target="_blank" rel="noopener">@laganniarquitetura</a>
-          <span>Florianópolis, SC</span>
+          <span>WhatsApp (48) 99655-6442</span>
+          <span>Florianópolis, SC, e on-line para todo o Brasil</span>
         </div>
       </div>
       <form id="form" novalidate>
-        <label class="campo">Seu nome
-          <input type="text" name="nome" autocomplete="name" maxlength="80" required>
-        </label>
-        <fieldset>
-          <legend>O que você quer mudar?</legend>
-          <div class="chips">
-            <label><input type="checkbox" name="amb" value="a casa inteira"><span>A casa inteira</span></label>
-            <label><input type="checkbox" name="amb" value="sala e cozinha"><span>Sala e cozinha</span></label>
-            <label><input type="checkbox" name="amb" value="quartos e suítes"><span>Quartos e suítes</span></label>
-            <label><input type="checkbox" name="amb" value="banheiros"><span>Banheiros</span></label>
-            <label><input type="checkbox" name="amb" value="área externa"><span>Área externa</span></label>
-          </div>
-        </fieldset>
-        <fieldset>
-          <legend>Como está a casa hoje?</legend>
-          <div class="chips">
-            <label><input type="radio" name="fase" value="Moro nela e quero reformar" checked><span>Moro nela e quero reformar</span></label>
-            <label><input type="radio" name="fase" value="Acabei de comprar"><span>Acabei de comprar</span></label>
-            <label><input type="radio" name="fase" value="Está em construção"><span>Está em construção</span></label>
-          </div>
-        </fieldset>
-        <label class="campo">Cidade
-          <input type="text" name="cidade" autocomplete="address-level2" maxlength="60" placeholder="Ex.: Florianópolis">
-        </label>
-        <p class="erro" id="erro" role="alert"></p>
-        <button class="btn btn-terracota" type="submit"><svg aria-hidden="true"><use href="#i-zap"/></svg>Enviar pelo WhatsApp</button>
+        <div class="progresso" aria-hidden="true"><span></span></div>
+        <p class="passo-info" id="passo-info" aria-live="polite">Passo 1 de 3</p>
+
+        <div class="passo">
+          <fieldset>
+            <legend>O que você quer transformar?</legend>
+            <div class="chips">
+              <label><input type="checkbox" name="amb" value="a casa inteira"><span>A casa inteira</span></label>
+              <label><input type="checkbox" name="amb" value="sala e cozinha"><span>Sala e cozinha</span></label>
+              <label><input type="checkbox" name="amb" value="quartos e suítes"><span>Quartos e suítes</span></label>
+              <label><input type="checkbox" name="amb" value="banheiros"><span>Banheiros</span></label>
+              <label><input type="checkbox" name="amb" value="área externa"><span>Área externa</span></label>
+            </div>
+          </fieldset>
+          <p class="erro" role="alert"></p>
+          <div class="botoes-passo"><button type="button" class="btn btn-terracota proximo">Continuar</button></div>
+        </div>
+
+        <div class="passo" hidden>
+          <fieldset>
+            <legend>Como está a casa hoje?</legend>
+            <div class="chips">
+              <label><input type="radio" name="fase" value="Moro nela e quero reformar" checked><span>Moro nela e quero reformar</span></label>
+              <label><input type="radio" name="fase" value="Acabei de comprar"><span>Acabei de comprar</span></label>
+              <label><input type="radio" name="fase" value="Está em construção"><span>Está em construção</span></label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Quando você quer começar?</legend>
+            <div class="chips">
+              <label><input type="radio" name="prazo" value="nos próximos 3 meses" checked><span>Nos próximos 3 meses</span></label>
+              <label><input type="radio" name="prazo" value="em até 6 meses"><span>Em até 6 meses</span></label>
+              <label><input type="radio" name="prazo" value="ainda estou pesquisando"><span>Ainda estou pesquisando</span></label>
+            </div>
+          </fieldset>
+          <p class="erro" role="alert"></p>
+          <div class="botoes-passo"><button type="button" class="voltar">Voltar</button><button type="button" class="btn btn-terracota proximo">Continuar</button></div>
+        </div>
+
+        <div class="passo" hidden>
+          <label class="campo">Seu nome
+            <input type="text" name="nome" autocomplete="name" maxlength="80" required>
+          </label>
+          <label class="campo">Cidade
+            <input type="text" name="cidade" autocomplete="address-level2" maxlength="60" placeholder="Ex.: Florianópolis">
+          </label>
+          <p class="erro" role="alert"></p>
+          <div class="botoes-passo"><button type="button" class="voltar">Voltar</button><button class="btn btn-terracota" type="submit"><svg aria-hidden="true"><use href="#i-zap"/></svg>Quero meu orçamento</button></div>
+        </div>
+
         <p class="nota">Seus dados vão apenas para a conversa com a Laganni.</p>
       </form>
     </div>
@@ -566,24 +607,25 @@ legend{font-size:.95rem;font-weight:500;color:#DCE3E9;margin-bottom:10px;padding
 <footer class="rodape">
   <div class="wrap">
     <span>© 2026 Laganni Arquitetura, Florianópolis</span>
-    <nav aria-label="Redes">
-      <a href="https://www.instagram.com/laganniarquitetura/" target="_blank" rel="noopener">Instagram</a>
-      <a href="https://www.linkedin.com/company/laganniarquitetura" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="https://wa.me/5548996556442" target="_blank" rel="noopener">WhatsApp</a>
-    </nav>
+    <span>@laganniarquitetura no Instagram</span>
   </div>
 </footer>
 
-<a class="barra-cta" href="https://wa.me/5548996556442?text=Ol%C3%A1%2C%20Laganni!%20Vim%20pelo%20site%20e%20quero%20um%20or%C3%A7amento%20para%20a%20minha%20casa." target="_blank" rel="noopener" data-local="barra-fixa"><svg aria-hidden="true"><use href="#i-zap"/></svg>Pedir orçamento no WhatsApp</a>
+<a class="barra-cta" href="https://wa.me/5548996556442?text=Ol%C3%A1%2C%20Laganni!%20Vim%20pelo%20site%20e%20quero%20um%20or%C3%A7amento%20para%20a%20minha%20casa." target="_blank" rel="noopener" data-local="barra-fixa"><svg aria-hidden="true"><use href="#i-zap"/></svg>Quero meu orçamento no WhatsApp</a>
 
 <a class="zap" data-local="botao-flutuante" href="https://wa.me/5548996556442?text=Ol%C3%A1%2C%20Laganni!%20Vim%20pelo%20site%20e%20quero%20um%20or%C3%A7amento%20para%20a%20minha%20casa." target="_blank" rel="noopener" aria-label="Conversar com a Laganni no WhatsApp"><svg aria-hidden="true"><use href="#i-zap"/></svg></a>
 
 <script>
 var barra = document.querySelector('.barra-cta');
+// A barra aparece depois do topo e some quando o formulario esta na tela, para nao cobrir os botoes dele.
 if (barra && 'IntersectionObserver' in window) {
-  new IntersectionObserver(function (entradas) {
-    barra.classList.toggle('visivel', !entradas[0].isIntersecting);
-  }).observe(document.querySelector('.hero'));
+  var naTela = {};
+  var observador = new IntersectionObserver(function (entradas) {
+    entradas.forEach(function (e) { naTela[e.target.id || 'hero'] = e.isIntersecting; });
+    barra.classList.toggle('visivel', !naTela.hero && !naTela.orcamento);
+  });
+  observador.observe(document.querySelector('.hero'));
+  observador.observe(document.getElementById('orcamento'));
 }
 
 // Eventos para o Google Tag Manager / GA4 quando forem instalados
@@ -597,24 +639,52 @@ document.addEventListener('click', function (e) {
   registrar('clique_whatsapp', { local: link.dataset.local || (secao && (secao.id || secao.className)) || 'rodape' });
 });
 
-document.getElementById('form').addEventListener('submit', function (e) {
+var form = document.getElementById('form');
+var passos = form.querySelectorAll('.passo');
+var passoAtual = 0;
+function mostrarPasso(i) {
+  passos.forEach(function (p, k) { p.hidden = k !== i; });
+  passoAtual = i;
+  form.querySelector('.progresso span').style.width = ((i + 1) / passos.length * 100) + '%';
+  document.getElementById('passo-info').textContent = 'Passo ' + (i + 1) + ' de ' + passos.length;
+  registrar('formulario_passo', { passo: i + 1 });
+}
+function erroDoPasso(texto) { passos[passoAtual].querySelector('.erro').textContent = texto; }
+form.addEventListener('click', function (e) {
+  if (e.target.closest('.proximo')) {
+    if (passoAtual === 0 && !form.querySelector('[name=amb]:checked')) { erroDoPasso('Escolha pelo menos um ambiente.'); return; }
+    erroDoPasso('');
+    mostrarPasso(passoAtual + 1);
+  }
+  if (e.target.closest('.voltar')) mostrarPasso(passoAtual - 1);
+});
+
+document.querySelectorAll('.quiz button').forEach(function (btn) {
+  btn.addEventListener('click', function () {
+    form.querySelectorAll('[name=amb]').forEach(function (i) { i.checked = i.value === btn.dataset.amb; });
+    registrar('quiz_inicio', { ambiente: btn.dataset.amb });
+    mostrarPasso(1);
+    form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
+
+form.addEventListener('submit', function (e) {
   e.preventDefault();
   var nome = this.nome.value.trim();
-  var erro = document.getElementById('erro');
   if (nome.length < 2) {
-    erro.textContent = 'Escreva seu nome para as arquitetas saberem com quem vão falar.';
+    erroDoPasso('Escreva seu nome para as arquitetas saberem com quem vão falar.');
     this.nome.focus();
     return;
   }
-  erro.textContent = '';
+  erroDoPasso('');
   var ambientes = Array.prototype.map.call(this.querySelectorAll('[name=amb]:checked'), function (i) { return i.value; });
   var cidade = this.cidade.value.trim();
   var msg = 'Olá, Laganni! Sou ' + nome + ' e vim pelo site.\n' +
-    'Situação: ' + this.fase.value +
+    'Situação: ' + this.fase.value + '\nQuero começar: ' + this.prazo.value +
     (ambientes.length ? '\nQuero mudar: ' + ambientes.join(', ') : '') +
     (cidade ? '\nCidade: ' + cidade : '') +
     '\nGostaria de um orçamento.';
-  registrar('envio_formulario', { ambientes: ambientes.join(', '), situacao: this.fase.value });
+  registrar('envio_formulario', { ambientes: ambientes.join(', '), situacao: this.fase.value, prazo: this.prazo.value });
   window.open('https://wa.me/5548996556442?text=' + encodeURIComponent(msg), '_blank', 'noopener');
 });
 </script>
